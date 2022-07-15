@@ -1,0 +1,739 @@
+0,'s-Graveland
+1,'s-Gravenzande
+2,'s-Heerenberg
+3,'t Goy
+4,'t Harde
+5,'t Waar
+6,Aadorp
+7,Aalsmeer
+8,Aalst
+9,Aarlanderveen
+10,Aarle-Rixtel
+11,Abcoude
+12,Achterveld (UT)
+13,Aduard
+14,Akkrum
+15,Albergen
+16,Alblasserdam
+17,Aldtsjerk
+18,Alkmaar
+19,Almelo
+20,Almere
+21,Alphen aan den Rijn
+22,Ambt Delden
+23,Ameide
+24,Amerongen
+25,Amersfoort
+26,Ammerzoden
+27,Amstelveen
+28,Amsterdam
+29,Angerlo
+30,Ankeveen
+31,Anloo
+32,Apeldoorn
+33,Appingedam
+34,Arnhem
+35,Assen
+36,Assendelft
+37,Asten
+38,Austerlitz
+39,Avenhorn
+40,Axel
+41,Baak
+42,Baarlo (LB)
+43,Baarn
+44,Bad Nieuweschans
+45,Badhoevedorp
+46,Bakel
+47,Barendrecht
+48,Barneveld
+49,Barsingerhorn
+50,Bavel
+51,Bedum
+52,Beek (LB)
+53,Beek (gem Ubbergen)
+54,Beekbergen
+55,Beilen
+56,Beinsdorp
+57,Belfeld
+58,Bemelen
+59,Bemmel
+60,Beneden-Leeuwen
+61,Bennekom
+62,Benschop
+63,Bentelo
+64,Benthuizen
+65,Bentveld
+66,Berg en Dal
+67,Berg en Terblijt
+68,Bergeijk
+69,Bergen (NH)
+70,Bergen op Zoom
+71,Berghem
+72,Bergschenhoek
+73,Berkel en Rodenrijs
+74,Berkel-Enschot
+75,Berlicum
+76,Berltsum
+77,Best
+78,Beuningen
+79,Beuningen Gld
+80,Beverwijk
+81,Biezenmortel
+82,Bilthoven
+83,Bitgummole
+84,Blaricum
+85,Bleiswijk
+86,Bleskensgraaf ca
+87,Blije
+88,Bocholtz
+89,Boekel
+90,Boksum
+91,Borger
+92,Born
+93,Borne
+94,Bosch en Duin
+95,Boskoop
+96,Bovenkarspel
+97,Boxmeer
+98,Boxtel
+99,Brakel
+100,Brantgum
+101,Breda
+102,Breukelen
+103,Breukeleveen
+104,Brielle
+105,Broekhuizenvorst
+106,Brunssum
+107,Budel
+108,Budel-Dorplein
+109,Buggenum
+110,Buitenkaag
+111,Buitenpost
+112,Bunde
+113,Bunnik
+114,Bunschoten-Spakenburg
+115,Burgerbrug
+116,Burgum
+117,Bussum
+118,Cadier en Keer
+119,Cadzand
+120,Callantsoog
+121,Capelle aan den IJssel
+122,Castricum
+123,Coevorden
+124,Colijnsplaat
+125,Cromvoirt
+126,Cuijk
+127,Culemborg
+128,Dalfsen
+129,De Bilt
+130,De Kwakel
+131,De Lier
+132,De Meern
+133,De Rijp
+134,De Steeg
+135,De Wilp
+136,Dedemsvaart
+137,Deest
+138,Deil
+139,Delden
+140,Delfgauw
+141,Delft
+142,Delfzijl
+143,Den Bosch
+144,Den Haag
+145,Den Ham (GR)
+146,Den Helder
+147,Den Hoorn (ZH)
+148,Den Horn
+149,Den Ilp
+150,Deurne
+151,Deursen-Dennenburg
+152,Deventer
+153,Didam
+154,Diemen
+155,Dieren
+156,Diessen
+157,Doesburg
+158,Doetinchem
+159,Dokkum
+160,Dongen
+161,Doorn
+162,Doorwerth
+163,Dordrecht
+164,Dorst
+165,Drachten
+166,Drempt
+167,Driebergen-Rijsenburg
+168,Drongelen
+169,Dronten
+170,Drunen
+171,Duiven
+172,Duivendrecht
+173,Dwingeloo
+174,Edam
+175,Ede
+176,Eelde
+177,Eemnes
+178,Eerbeek
+179,Eersel
+180,Eethen
+181,Egmond aan Zee
+182,Egmond aan den Hoef
+183,Eibergen
+184,Eijsden
+185,Eindhoven
+186,Elburg
+187,Elsloo
+188,Elst
+189,Elst Ut
+190,Emmen
+191,Enkhuizen
+192,Enschede
+193,Epe
+194,Epse
+195,Ermelo
+196,Escharen
+197,Est
+198,Etten
+199,Etten-Leur
+200,Ewijk
+201,Exloo
+202,Eygelshoven
+203,Farmsum
+204,Foxhol
+205,Franeker
+206,Gaanderen
+207,Galder
+208,Garderen
+209,Garmerwolde
+210,Geertruidenberg
+211,Geeuwenbrug
+212,Geffen
+213,Geldermalsen
+214,Geldrop
+215,Geleen
+216,Gemert
+217,Gendt
+218,Genemuiden
+219,Gennep
+220,Geulle
+221,Gieten
+222,Gilze
+223,Godlinze
+224,Goedereede
+225,Goes
+226,Goirle
+227,Gorinchem
+228,Gouda
+229,Goutum
+230,Grave
+231,Groenekan
+232,Groenlo
+233,Groesbeek
+234,Groet
+235,Groningen
+236,Gronsveld
+237,Groot-Ammers
+238,Grootebroek
+239,Grou
+240,Gulpen
+241,Haaften
+242,Haaksbergen
+243,Haarlem
+244,Haarlemmerliede
+245,Haarsteeg
+246,Haelen
+247,Halfweg
+248,Hall
+249,Hardenberg
+250,Harderwijk
+251,Hardinxveld-Giessendam
+252,Haren Gn
+253,Harkstede GN
+254,Harlingen
+255,Harmelen
+256,Harskamp
+257,Hasselt
+258,Hattem
+259,Hattemerbroek
+260,Haule
+261,Hazerswoude-Dorp
+262,Hedel
+263,Heel
+264,Heelsum
+265,Heemskerk
+266,Heemstede
+267,Heerde
+268,Heerenveen
+269,Heerewaarden
+270,Heerhugowaard
+271,Heerlen
+272,Heesch
+273,Heeswijk-Dinther
+274,Heeze
+275,Heiloo
+276,Heino
+277,Hellevoetsluis
+278,Helmond
+279,Hem
+280,Hendrik-Ido-Ambacht
+281,Hengelo
+282,Hengevelde
+283,Herkenbosch
+284,Herten
+285,Herveld
+286,Heteren
+287,Heumen
+288,Heusden
+289,Hillegom
+290,Hilvarenbeek
+291,Hilversum
+292,Hoek van Holland
+293,Hoenderloo
+294,Hoensbroek
+295,Hoevelaken
+296,Hoeven
+297,Hoofddorp
+298,Hooge Zwaluwe
+299,Hoogerheide
+300,Hoogeveen
+301,Hoogezand
+302,Hooghalen
+303,Hoogkarspel
+304,Hoogland
+305,Hooglanderveen
+306,Hoogmade
+307,Hoogvliet Rotterdam
+308,Hoorn
+309,Horn
+310,Houten
+311,Huis ter Heide
+312,Huisseling
+313,Huissen
+314,Huizen
+315,Hulshorst
+316,Hummelo
+317,Hurdegaryp
+318,IJmuiden
+319,IJsselmuiden
+320,IJsselstein
+321,Ingen
+322,Jorwert
+323,Kaatsheuvel
+324,Kamerik
+325,Kampen
+326,Kamperland
+327,Katwijk
+328,Katwijk NB
+329,Keijenborg
+330,Kerkdriel
+331,Kerkrade
+332,Kesteren
+333,Kiel-Windeweer
+334,Kimswerd
+335,Klarenbeek
+336,Klazienaveen
+337,Kloosterburen
+338,Klundert
+339,Knegsel
+340,Kockengen
+341,Koedijk
+342,Kolhorn
+343,Koog aan de Zaan
+344,Kortenhoef
+345,Koudekerk aan den Rijn
+346,Koudekerke
+347,Kraggenburg
+348,Krimpen aan de Lek
+349,Krimpen aan den IJssel
+350,Krommenie
+351,Kropswolde
+352,Kudelstaart
+353,Kwintsheul
+354,Lage Zwaluwe
+355,Landgraaf
+356,Landsmeer
+357,Langbroek
+358,Laren
+359,Lathum
+360,Leek
+361,Leende
+362,Leerdam
+363,Leersum
+364,Leeuwarden
+365,Leiden
+366,Leiderdorp
+367,Leidschendam
+368,Leimuiden
+369,Lelystad
+370,Lent
+371,Leusden
+372,Leuth
+373,Liempde
+374,Lierop
+375,Lieshout
+376,Liessel
+377,Lijnden
+378,Limmen
+379,Linden
+380,Lisse
+381,Lisserbroek
+382,Lith
+383,Lochem
+384,Loenen
+385,Loenen aan de Vecht
+386,Loenersloot
+387,Loon op Zand
+388,Loosdrecht
+389,Lopik
+390,Lopikerkapel
+391,Lunteren
+392,Luyksgestel
+393,Maarheeze
+394,Maarn
+395,Maarssen
+396,Maassluis
+397,Maastricht
+398,Made
+399,Malden
+400,Mander
+401,Mantinge
+402,Maren-Kessel
+403,Margraten
+404,Maria Hoop
+405,Markelo
+406,Marsum
+407,Marum
+408,Medemblik
+409,Meerkerk
+410,Meerssen
+411,Melick
+412,Meppel
+413,Merselo
+414,Meteren
+415,Middelburg
+416,Middenbeemster
+417,Middenmeer
+418,Mierlo
+419,Mijdrecht
+420,Mill
+421,Moergestel
+422,Molenhoek
+423,Monnickendam
+424,Montfoort
+425,Montfort
+426,Mook
+427,Moordrecht
+428,Musselkanaal
+429,Naaldwijk
+430,Naarden
+431,Nederhorst den Berg
+432,Nederweert
+433,Neerkant
+434,Netersel
+435,Nietap
+436,Nieuw-Balinge
+437,Nieuw-Vennep
+438,Nieuwe Niedorp
+439,Nieuwe Pekela
+440,Nieuwegein
+441,Nieuwerkerk a/d IJssel
+442,Nieuwersluis
+443,Nieuwkuijk
+444,Nieuwleusen
+445,Nieuwveen
+446,Nijensleek
+447,Nijeveen
+448,Nijkerk
+449,Nijmegen
+450,Nijverdal
+451,Nistelrode
+452,Noordbroek
+453,Noordscheschut
+454,Noordwijk
+455,Noordwijkerhout
+456,Nootdorp
+457,Nuenen
+458,Nuland
+459,Nunspeet
+460,Nuth
+461,Odijk
+462,Oegstgeest
+463,Oene
+464,Oirschot
+465,Oisterwijk
+466,Oldehove
+467,Oldenzaal
+468,Olst
+469,Ommen
+470,Onstwedde
+471,Oost West en Middelbeers
+472,Oost-Souburg
+473,Oosterbeek
+474,Oosterhout
+475,Oosthuizen
+476,Oostrum
+477,Oostvoorne
+478,Opmeer
+479,Ospel
+480,Oss
+481,Otterlo
+482,Oud Gastel
+483,Oud-Beijerland
+484,Oude Meer
+485,Oude Pekela
+486,Oudehaske
+487,Oudenbosch
+488,Ouderkerk aan de Amstel
+489,Oudeschip
+490,Oudkarspel
+491,Oudorp
+492,Overloon
+493,Overveen
+494,Papendrecht
+495,Peize
+496,Pernis Rotterdam
+497,Persingen
+498,Pijnacker
+499,Plasmolen
+500,Prinsenbeek
+501,Purmerend
+502,Purmerland
+503,Putten
+504,Puttershoek
+505,Raalte
+506,Raamsdonk
+507,Raamsdonksveer
+508,Randwijk
+509,Reeuwijk
+510,Rekken
+511,Renkum
+512,Ressen
+513,Reusel
+514,Rheden
+515,Rheezerveen
+516,Rhenen
+517,Rhenoy
+518,Rhoon
+519,Ridderkerk
+520,Riel
+521,Rijen
+522,Rijnsburg
+523,Rijpwetering
+524,Rijsbergen
+525,Rijsenhout
+526,Rijssen
+527,Rijswijk
+528,Rilland
+529,Rockanje
+530,Roden
+531,Roelofarendsveen
+532,Roermond
+533,Roosendaal
+534,Rosmalen
+535,Rotterdam
+536,Rozenburg
+537,Ruinerwold
+538,Rumpt
+539,Sappemeer
+540,Sassenheim
+541,Schagen
+542,Schaijk
+543,Schalkhaar
+544,Schalkwijk
+545,Schellinkhout
+546,Schermerhorn
+547,Scherpenzeel
+548,Schiedam
+549,Schijndel
+550,Schin op Geul
+551,Schinveld
+552,Schipluiden
+553,Schoonhoven
+554,Schoorl
+555,Serooskerke
+556,Simpelveld
+557,Sint Geertruid
+558,Sint Jansklooster
+559,Sint Odilienberg
+560,Sint Pancras
+561,Sint-Michielsgestel
+562,Sint-Oedenrode
+563,Sittard
+564,Sliedrecht
+565,Slochteren
+566,Smilde
+567,Sneek
+568,Soest
+569,Soesterberg
+570,Son en Breugel
+571,Spijkenisse
+572,Sprang-Capelle
+573,St. Willebrord
+574,Stadskanaal
+575,Staphorst
+576,Steensel
+577,Steenwijk
+578,Stein
+579,Stellendam
+580,Stevensweert
+581,Stieltjeskanaal
+582,Stiens
+583,Stolwijk
+584,Stoutenburg
+585,Surhuisterveen
+586,Surhuizum
+587,Swifterbant
+588,Tegelen
+589,Ten Post
+590,Ter Aar
+591,Terborg
+592,Terheijden
+593,Termunterzijl
+594,Terneuzen
+595,Teuge
+596,Thesinge
+597,Tiel
+598,Tiendeveen
+599,Tilburg
+600,Tolbert
+601,Tricht
+602,Tubbergen
+603,Twello
+604,Twijzel
+605,Tynaarlo
+606,Ubbena
+607,Ubbergen
+608,Uden
+609,Uitgeest
+610,Uithoorn
+611,Ulvenhout AC
+612,Utrecht
+613,Vaals
+614,Vaassen
+615,Valkenburg
+616,Valkenswaard
+617,Vasse
+618,Veendam
+619,Veenendaal
+620,Veenhuizen
+621,Veeningen
+622,Veghel
+623,Veldhoven
+624,Velp
+625,Velp (NB)
+626,Velsen-Noord
+627,Velserbroek
+628,Venhorst
+629,Venhuizen
+630,Venlo
+631,Venray
+632,Vessem
+633,Vianen
+634,Vierhouten
+635,Vijfhuizen
+636,Vijlen
+637,Vinkel
+638,Vinkeveen
+639,Visvliet
+640,Vlaardingen
+641,Vleuten
+642,Vlijmen
+643,Vlissingen
+644,Voerendaal
+645,Voorburg
+646,Voorhout
+647,Voorschoten
+648,Voorst
+649,Voorthuizen
+650,Vreeland
+651,Vries
+652,Vroomshoop
+653,Vrouwenparochie
+654,Vught
+655,Waalre
+656,Waalwijk
+657,Waardenburg
+658,Waarland
+659,Waddinxveen
+660,Wagenberg
+661,Wageningen
+662,Wamel
+663,Wanneperveen
+664,Wapenveld
+665,Warffum
+666,Warmenhuizen
+667,Warmond
+668,Warnsveld
+669,Wassenaar
+670,Wateringen
+671,Weert
+672,Weesp
+673,Wehl
+674,Wenum Wiesel
+675,Werkendam
+676,Werkhoven
+677,Wernhout
+678,Wervershoof
+679,Wesepe
+680,Wessem
+681,Westerbroek
+682,Westerland
+683,Westervoort
+684,Westzaan
+685,Weurt
+686,Wezep
+687,Wierden
+688,Wieringerwaard
+689,Wijchen
+690,Wijhe
+691,Wijk aan Zee
+692,Wijk bij Duurstede
+693,Wilnis
+694,Winkel
+695,Winschoten
+696,Winssen
+697,Winsum
+698,Wintelre
+699,Winterswijk
+700,Winterswijk Woold
+701,Wittem
+702,Woerden
+703,Woerdense Verlaat
+704,Wolvega
+705,Wormer
+706,Wormerveer
+707,Woubrugge
+708,Woudenberg
+709,Ysselsteyn
+710,Zaandam
+711,Zaandijk
+712,Zaltbommel
+713,Zandvoort
+714,Zeddam
+715,Zeegse
+716,Zeeland
+717,Zeewolde
+718,Zeist
+719,Zennewijnen
+720,Zevenaar
+721,Zevenbergen
+722,Zierikzee
+723,Zoetermeer
+724,Zoeterwoude
+725,Zuiderwoude
+726,Zuidhorn
+727,Zuidlaren
+728,Zuidwolde
+729,Zundert
+730,Zutphen
+731,Zwaag
+732,Zwammerdam
+733,Zwanenburg
+734,Zwartsluis
+735,Zwijndrecht
+736,Zwolle
+737,amsterdam
+738,de Lutte

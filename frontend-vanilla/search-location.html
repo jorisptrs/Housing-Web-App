@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Search by location</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+       <header id = "welcome-header">
+           <h1>Properties Data</h1>
+           <p>Hello, this website will give you data on properties available (and unavailable) in netherlands</p>
+           <hr>
+        </header>
+        <!-- ----------------------- TEMPLATES BELOW ----------------------- -->
+        <h3>Introduce the location you want to search for in terms of latitude and longitude </h3>
+        <p>Leave fields blank to get all the properties instead.</p>
+        <filter-location id="filter-element"></filter-location>
+
+        <template id="filter-location">
+            <p>Latitude: <input type="text" id="latitude" placeholder="latitude" /><br>
+            </p>
+            <p>Longitude: <input type="text" id="longitude" placeholder="longitude" /><br>
+            </p>
+            <h3>Actions:</h3>
+            <button id="filter">Find</button>
+            <button id="update" disabled>Open editor</button>
+            <button id="delete" disabled>Delete Properties at this location</button>
+            <div id="update-panel"></div>
+
+            <div id="properties">
+                <!-- TO BE FILLED BY component -->
+            </div>
+
+            <style>
+                :host {
+                    display: block;
+                }
+            </style>
+        </template>
+
+
+        <template id="property-summary">
+            <div>
+                <h3><slot name="type"></slot></h3>
+                <p><slot name="rent"></slot></p>
+            </div>
+
+            <style>
+                :host {
+                    cursor: pointer;
+                }
+            </style>
+        </template>
+
+
+        <template id="property-edit-box"> 
+            <div> 
+                <p class="delete-if-put">Property Id : <input id="property-id-edit" class="delete-if-put"></input></p>
+                <p>Is Room Active: <select id="is-room-active-edit"></select></p>
+                <p>Area Square Meter <input id="sqm-edit"></input></p>
+                <p>Desired tenant gender: <select id="gender-edit"></select></p>
+                <p>Is Furnished: <select id="furnished-edit"></select></p>
+                <p>Cover image URL: <input id="profile-image-edit"></input></p>
+                <p>Costs:</p>
+                <ul>
+                        <li>Rent: <input id="rent-edit"></input></li>
+                        <li>Added Costs: <input id="added-costs-edit"></input></li>
+                        <li>Deposit: <input id="deposit-edit"></input></li>
+                </ul>
+                <p>Location:</p>
+                <ul>
+                        <li>Latitude: <input id="latitude-edit"></input></li>
+                        <li>Longitude: <input id="longitude-edit"></input></li>
+                </ul>
+                <p>City:</p>
+                <ul>
+                        <li>Id of city: <input id="city-id-edit"></input></li>
+                        <li>Name of city: <input id="city-name-edit"></input></li>
+                </ul>
+            </div>
+            <button id="submit-update">Submit</button>
+            
+
+        </template>
+
+        <script type="module" src="main.js"></script>
+        <script>
+
+            document.getElementById("filter-element").addEventListener("property-selected", ev => {
+                console.log("got emm");
+
+                window.location.href = '/property.html';
+                propertyId = ev.propertyId;
+                window.localStorage.setItem("propertyId", propertyId);
+
+            });
+        </script>
+    </body>
+</html>

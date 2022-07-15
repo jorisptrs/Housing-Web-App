@@ -1,0 +1,4 @@
+morgan - Logging of http requests etc
+body-parser - Format http body as json
+typeorm - Object-relation mapping for Typescript
+pandas, os, pymysql - python packages

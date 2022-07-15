@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Select City</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+       <header id = "welcome-header">
+           <h1>Properties Data</h1>
+           <p>Hello, this website will give you data on properties available (and unavailable) in netherlands</p>
+           <hr>
+        </header>
+        <!-- ----------------------- TEMPLATES BELOW ----------------------- -->
+        <h3>For starters, search and choose a city (leave blank to get all cities)</h3>
+        <city-finder id="finder"></city-finder>
+        <template id="city-finder">
+            
+            <input type="text" id="city-name" placeholder="City Name" /><br>
+            <button id="find">Find</button>
+            <h3>Alternatively, you may wish you browse properties by location.</h3>
+            <p><a id=link href="search-location.html">Here</a> you can do just that! Insert a longitude and a latitude</p>        
+            <h3>Lastly, if you want to post a new property, you can do so as well</h3>
+            <button id="new-property" onclick="location.href='new-property.html'">Create new property</button>
+            <div id="cities">
+                <!-- TO BE FILLED BY component -->
+            </div>
+
+            <style>
+                :host {
+                    display: block;
+                }
+            </style>
+        </template>
+
+        <template id="city-in-list">
+            <div>
+                <h3><slot name="name">City</slot></h3>
+                <!-- <p><slot name="statistics">View Statistics</slot></p> -->
+            </div>
+
+            <style>
+                :host {
+                    cursor: pointer;
+                }
+            </style>
+        </template>
+
+        
+
+        <script type="module" src="main.js"></script>
+        <script>
+
+            document.getElementById("finder").addEventListener("city-selected", ev => {
+                console.log("got emm");
+                // document.getElementById("detail").movieId = ev.movieId;
+                window.location.href = "/selected-city.html";
+                cityId = ev.cityId;
+                cityName = ev.cityName;
+                window.localStorage.setItem("cityId", cityId);
+                window.localStorage.setItem("cityName", cityName);
+            });
+        </script>
+    </body>
+</html>

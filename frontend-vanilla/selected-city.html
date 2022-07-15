@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Select Property</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <header id = "welcome-header">
+            <h1>Properties Data</h1>
+            <p>Hello, this website will give you data on properties available (and unavailable) in netherlands</p>
+           <hr>
+        </header>
+        <p>Great! Here you can select from various filters and find all the properties that apply. <br>
+            Additionally, you can request to see the statistics across all properties within this selection in this city, if you so desire.</p>
+         <p>Or you can go back to <a href="index.html">choose another city</a>.</p>
+        
+         <property-filter id="filter"></property-filter>
+        
+
+
+        <!-- ----------------------- TEMPLATES BELOW ----------------------- -->
+        <template id="property-filter">
+            <h3>Selected city: <span id="city-name"></span> (id = <span id="city-id"></span>) </h3>
+            <h3>Filters:</h3>
+            <p> Amount of properties to display <input type="number" id="limit" placeholder=100 /><br></p>
+            <p> Rent preferences: 
+                <input type="number" id="rent-min" placeholder="Rent Min" />
+                <input type="number" id="rent-max" placeholder="Rent Max" />
+                 </p>
+
+            <p>Other Filters:
+            <select id="order-by"></select>
+            <select id="order-dir"></select>
+            <select id="is-room-active"></select>
+            <select id="is-furnished"></select>
+            <select id="gender"></select>
+            </p>
+
+            <h3>Actions:</h3>
+            <button id="filter">Find Properties</button>
+            <button id="show-statistics">Display Statistics</button>
+            <div id="properties">
+                <!-- TO BE FILLED BY component -->
+            </div>
+
+            <style>
+                :host {
+                    display: block;
+                }
+            </style>
+        </template>
+
+        <template id="city-stats">
+            <h3>Here you can see some very insightful statistics<br>
+            </h3>
+            <div>
+                <p>Deposit Mean:                <slot name="mean-deposit"></slot></p>
+                <p>Deposit Median:              <slot name="median-deposit"></slot></p>
+                <p>Deposit Standard Deviation:  <slot name="std-deposit"></slot></p>
+                <p>Rent Mean:                   <slot name="mean-rent"></slot></p>
+                <p>Rent Median:                 <slot name="median-rent"></slot></p>
+                <p>Rent Standard Deviation:     <slot name="std-rent"></slot></p>
+            </div>
+        </template>
+
+        <template id="property-summary">
+            <div>
+                <h3><slot name="type"></slot></h3>
+                <p><slot name="rent"></slot></p>
+            </div>
+
+            <style>
+                :host {
+                    cursor: pointer;
+                }
+            </style>
+        </template>
+
+
+        <script type="module" src="main.js"></script>
+        <script>
+
+            document.getElementById("filter").addEventListener("property-selected", ev => {
+                console.log("got emm");
+
+                window.location.href = '/property.html';
+                propertyId = ev.propertyId;
+                window.localStorage.setItem("propertyId", propertyId);
+
+            });
+        </script>
+    </body>
+</html>

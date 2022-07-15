@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rental Properties</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <header id = "welcome-header">
+            <h1>Properties Data</h1>
+            <p>Hello, this website will give you data on properties available (and unavailable) in netherlands</p>
+           <hr>
+        </header>
+        <h3>To create a new property, simply fill in the fields below. When you are done, click "Submit" </h3>
+        <new-property></new-property>
+
+        <template id="property-edit-box"> 
+            <div> 
+                <p id="delete-if-put">Property Id : <input id="property-id-edit"></input></p>
+                <p>Is Room Active: <select id="is-room-active-edit"></select></p>
+                <p>Area Square Meter <input id="sqm-edit"></input></p>
+                <p>Desired tenant gender: <select id="gender-edit"></select></p>
+                <p>Is Furnished: <select id="furnished-edit"></select></p>
+                <p>Cover image URL: <input id="profile-image-edit"></input></p>
+                <p>Costs:</p>
+                <ul>
+                        <li>Rent: <input id="rent-edit"></input></li>
+                        <li>Added Costs: <input id="added-costs-edit"></input></li>
+                        <li>Deposit: <input id="deposit-edit"></input></li>
+                </ul>
+                <p id="delete-if-put2">Location:</p>
+                <ul>
+                        <li>Latitude: <input id="latitude-edit"></input></li>
+                        <li>Longitude: <input id="longitude-edit"></input></li>
+                </ul>
+                <p>City:</p>
+                <ul>
+                        <li>Id of city: <input id="city-id-edit"></input></li>
+                        <li>Name of city: <input id="city-name-edit"></input></li>
+                </ul>
+            </div>
+            <button id="submit-update">Submit</button>
+            
+
+        </template>
+
+
+            
+        <script type="module" src="main.js"></script>
+        <script>
+
+            // document.getElementById("filter").addEventListener("property-selected", ev => {
+            //     console.log("got emm");
+            // });
+        </script>
+    </body>
+</html>

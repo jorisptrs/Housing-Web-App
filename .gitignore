@@ -1,0 +1,7 @@
+~*.pptx
+node_modules
+data
+.env
+obj
+backend-dotnetcore/bin
+database/original-dataset/properties.json

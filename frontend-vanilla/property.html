@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rental Properties</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <header id = "welcome-header">
+            <h1>Properties Data</h1>
+            <p>Hello, this website will give you data on properties available (and unavailable) in netherlands</p>
+           <hr>
+        </header>
+        <p>Here you can view the property, consider the price, location and other factors. (sometimes the images are not working)<br>
+            Moreover, if you wish, you can either update or remove this property entirely.
+        </p>
+        <p><strong>Note:</strong>If image does not load, try reloading the page. <br>
+            If that does not work, sometimes the image urls may just be wrong</p>
+        <property-detail id="property"></property-detail>
+            
+        <template id="property-detail"> 
+            <div id="bg-image"></div>
+            <div> 
+                <img id=profile-image>
+                <h3>Property details</h3>
+                
+                <p>Property: <span id="propertyId"></span></p>
+                <p>Located at: </p>
+                    <ul>
+                        <li>Latitude: <span id="latitude"></span></li>
+                        <li>Longitude: <span id="longitude"></span></li>
+                    </ul> 
+                    <iframe id="google-location"
+                    width="450"
+                    height="250"
+                    frameborder="0" style="border:0"
+                     allowfullscreen>
+                    </iframe>
+                <p>Area: <span id="sqm"></span> Square Meters</p>
+                <p>Furnish status: <span id="furnished"></span></p>
+                <p>Household looking for: <span id="gender"></span></p>
+                <p>Is Still Active: <span id="is-room-active"></span></p>
+                    
+                
+                
+                <p>Costs:</p>
+                <ul>
+                        <li>Rent: <span id="rent"></span></li>
+                        <li>Added Costs: <span id="added-costs"></span></li>
+                        <li>Deposit: <span id="deposit"></span></li>
+                        <li>Rent Per Square Meter: <span id="rent-per-sqm"></span></li>
+                </ul>
+            </div>
+            <button id="update">Edit Property</button>
+            <button id="delete">Delete Property</button>
+            <div id="update-panel"></div>
+        </template>
+
+        <template id="property-detail-edit"> 
+            <div> 
+                <h3>Edit details</h3>
+                <p>Furnish status: <select id="furnished-edit"></select></p>
+                <p>Household looking for: <select id="gender-edit"></select></p>
+                <p>Is Still Active: <select id="is-room-active-edit"></select></p>
+                <p>Costs:</p>
+                <ul>
+                        <li>Rent: <input id="rent-edit"></input></li>
+                        <li>Added Costs: <input id="added-costs-edit"></input></li>
+                        <li>Deposit: <input id="deposit-edit"></input></li>
+                        <li>Rent Per Square Meter: <span id="rent-per-sqm-edit"></span></li>
+                </ul>
+            </div>
+            <button id="submit-update">Submit</button>
+            
+
+        </template>
+
+
+            
+        <script type="module" src="main.js"></script>
+        <script>
+
+            // document.getElementById("filter").addEventListener("property-selected", ev => {
+            //     console.log("got emm");
+            // });
+        </script>
+    </body>
+</html>

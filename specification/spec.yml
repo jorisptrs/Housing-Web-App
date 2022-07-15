@@ -1,0 +1,654 @@
+openapi: '3.0.2'
+info:
+  title: Web Engineering Group 3 Rentals API
+  version: '2.0'
+
+servers:
+  - url: http://localhost:3002/
+
+components:
+  schemas:
+    City:
+      type: object
+      required:
+        - "id"
+        - "name"
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name: 
+          type: string
+          readOnly: true
+        properties:
+          type: array
+          items:
+            $ref: "#/components/schemas/PropertySummary"
+
+    CitySummary:
+      type: object
+      required:
+        - "id"
+        - "name"
+      properties:
+        id:
+          type: integer
+        name: 
+          type: string
+
+    Statistics:
+      type: object
+      properties:
+        meanDeposit: 
+          type: number 
+          example: 0
+        medianDeposit: 
+          type: number 
+        standardDeviationDeposit: 
+          type: number
+        meanRentalCost:
+          type: number 
+          example: 0
+        medianRentalCost: 
+          type: number 
+        standardDeviationRentalCost: 
+          type: number 
+
+    Property: 
+      type: object
+      required:
+        - "propertyID"
+        - "cost"
+      properties:
+        propertyID:
+          type: string
+        isRoomActive:
+          type: boolean
+        areaSqm:
+          type: integer
+        gender:
+          type: string
+        furnished:
+          type: string
+        coverImageUrl: 
+          type: string
+        cost: 
+          type: object
+          required:
+           - "rent"
+          properties:
+            rent:
+              type: number
+              description: Price or the rent for the property
+            additionalCost:
+              type: number
+              description: Price of additional costs when renting the property
+            deposit:
+              type: number
+            rentPerAreaSqm:
+              readOnly: true
+              type: number
+        location:
+          type: object
+          required:
+            - "longitude"
+            - "latitude"
+          properties:
+            longitude:
+              type: number
+              readOnly: true
+            latitude:
+              type: number
+              readOnly: true
+        city:
+          type: object
+          $ref: "#/components/schemas/CitySummary"
+
+    PropertySummary:
+      type: object
+      required:
+        - "propertyID"
+        - "rent"
+        - "cityName"
+      properties:
+        propertyID:
+          type: string
+          readOnly: true
+        rent:
+          type: number
+        cityName:
+          type: string
+
+  responses:
+    BadRequest:
+      description: Request was not well-formed, see error details
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error-message:
+                type: string
+                description: Error message detailing the problem with the request
+        text/csv:
+          schema:
+            type: string
+    NotFound:
+      description: Resource not found
+
+    NoResults:
+      description: List empty; no results
+
+    ServerError:
+      description: Server error; no results, try again later
+
+  parameters:
+    
+    property-filter-city:
+      name: city
+      in: path
+      required: true
+      description: Filtering the results by city
+      schema:
+        type: string
+        # ideally we could have a dropdown menu with  
+        # all the cities available in the dataset
+    
+    property-furnished:
+      name: furnished 
+      in: query 
+      required: false 
+      description: Filtering properties by whether or not they are furnished
+      schema:
+        type: string
+        default: Furnished
+        enum:
+          - Furnished
+          - Unfurnished
+          - Uncarpeted
+          - Unknown
+
+    property-filter-gender:
+      name: gender
+      in: query
+      required: false
+      description: Filters properties by gender
+      schema: 
+        type: string
+        default: Mixed
+        enum:
+          - Mixed
+          - Male
+          - Female
+          - Unknown
+
+    order-by:
+      name: order-by
+      in: query
+      required: true
+      description: Order properties by chosen variables
+      schema:
+        type: string
+        default: rent
+        enum:
+          - rent
+          - rent/areaSqm
+
+    limit:
+      name: limit
+      in: query
+      required: false
+      description: Show a specific amount of properties
+      schema:
+        type: integer
+        default: 10
+
+    order-dir:
+      name: order-dir
+      in: query
+      required: false
+      description: Order items ascending or descending
+      schema:
+        type: string
+        default: descending
+        enum:
+          - descending
+          - ascending
+
+    property-filter-cost-min:
+      name: rent-min
+      in: query
+      required: false
+      description: Minimum value for rent used when filtering the database
+      schema:
+        type: integer
+
+    property-filter-cost-max:
+      name: rent-max
+      in: query
+      required: false
+      description: Maximum value for rent used when filtering the database
+      schema:
+        type: integer
+
+    property-filter-active:
+      name: is-room-active
+      in: query
+      required: false
+      description: Filtering the results based on whether an property is active for rent
+      schema:
+        type: boolean
+        default: true
+    
+
+paths:
+  /properties:    
+    get:
+      tags:
+        - Properties
+      description: Retrieve properties at a specific location
+      summary: Retrieve properties at a specific location
+      parameters:
+      - name: longitude
+        in: query
+        required: true
+        description: The longitude of the city
+        schema: 
+          type: number
+      - name: latitude
+        in: query
+        required: true
+        description: The latitude of the city
+        schema: 
+          type: number
+          
+      responses:
+        '200':
+          description: "Succesfully got property"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PropertySummary"
+            text/csv:
+              schema:
+                type: string
+        '204':
+          $ref: "#/components/responses/NoResults"
+
+        '400':
+          $ref: '#/components/responses/BadRequest'
+
+        '500':
+          $ref: '#/components/responses/ServerError'
+
+
+    put:
+      tags:
+        - Properties
+      description: Update properties at a specific location
+      summary: Updates properties at a specific location
+      parameters:
+      - name: longitude
+        in: query
+        required: true
+        description: The longitude of the city
+        schema: 
+          type: number
+      - name: latitude
+        in: query
+        required: true
+        description: The latitude of the city
+        schema: 
+          type: number
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Property"
+              
+      responses:
+        '200':
+          description: "Property updated, returns the new state"
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/Property"
+            text/csv:
+              schema:
+                type: string
+
+        '400':
+          $ref: '#/components/responses/BadRequest'
+
+        '404':
+          $ref: "#/components/responses/NotFound"
+
+        '500':
+          $ref: '#/components/responses/ServerError'
+
+    
+    delete:
+      tags:
+        - Properties
+      summary: Delete properties at a specific location
+      description: Deletes properties at a specific location
+      parameters:
+      - name: longitude
+        in: query
+        required: true
+        description: The longitude of the city
+        schema: 
+          type: number
+      - name: latitude
+        in: query
+        required: true
+        description: The latitude of the city
+        schema: 
+          type: number
+        
+      responses:
+        '204':
+          description: Property/ies deleted successfully
+
+        '400':
+          $ref: '#/components/responses/BadRequest'
+
+        '404':
+          $ref: "#/components/responses/NotFound"
+
+        '500':
+          $ref: '#/components/responses/ServerError'
+    
+    post:
+      tags:
+        - Properties
+      summary: Create a new property object
+      description: Creates a new property object with the given information
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Property"
+          text/csv:
+            schema:
+              type: string
+      responses:
+        '201':
+          description: Property successfully created
+          content:
+            application/json:
+              schema:
+                type: string
+                description: ID of newly created property
+            text/csv:
+              schema:
+                type: string
+                description: ID of newly created property
+          headers:
+            Location:
+              schema:
+                type: string
+              description: The URL of the newly-created property
+
+        '400':
+          $ref: '#/components/responses/BadRequest'
+
+        '409':
+          description: Property with the same name already exists
+          headers:
+            Location:
+              schema:
+                type: string
+              description: The URL of the pre-existing property
+
+        '500':
+          $ref: '#/components/responses/ServerError'
+
+  /properties/{propertyID}:
+    parameters:
+      - name: propertyID
+        in: path
+        required: true
+        description: The kamernet id of the property
+        schema:
+          type: string
+
+    get:
+      tags:
+        - Properties
+      summary: Retrieve a selected property
+      description: Retrieves the property with the given id
+      responses:
+        '200':
+          description: "Succesfully got property"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Property"
+            text/csv:
+              schema:
+                type: string
+
+        '400':
+          $ref: '#/components/responses/BadRequest'
+
+        '404':
+          $ref:  "#/components/responses/NotFound"
+
+        '500':
+          $ref: '#/components/responses/ServerError'
+
+    put:
+      tags:
+        - Properties
+      summary: Update a property
+      description: Updates the property with the given id
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Property"
+          text/csv:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: "Property updated"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Property"
+            text/csv:
+              schema:
+                type: string
+
+        '400':
+          $ref: '#/components/responses/BadRequest'
+
+        '404':
+          $ref: "#/components/responses/NotFound"
+
+        '500':
+          $ref: '#/components/responses/ServerError'
+
+    delete:
+      tags:
+        - Properties
+      summary: Delete a property
+      description: Deletes the property with the given id
+      responses:
+        '204':
+          description: Property deleted successfully
+
+        '400':
+          $ref: '#/components/responses/BadRequest'
+
+        '404':
+          $ref: "#/components/responses/NotFound"
+
+        '500':
+          $ref: '#/components/responses/ServerError'
+
+
+  /cities:
+    get:
+      tags:
+        - Cities
+      description: Retrieve a list of the cities availabe in the database
+      summary: Get list of cities
+    
+      responses:
+        '200':
+          description: "Succesfully got cities"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/City"
+            text/csv:
+              schema:
+                type: string
+                
+        '204':
+          $ref: "#/components/responses/NoResults"
+
+        '400':
+          $ref: '#/components/responses/BadRequest'
+
+        '500':
+          $ref: '#/components/responses/ServerError'
+
+  /city/{id}/properties:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        description: The ID of the city
+        schema:
+          type: string
+    get:
+      tags:
+        - Cities
+      description: Retrieves top N properties within a city based on rent or price per square meter, in ascending or descending order. 
+      summary: Retrieve N properties with selected parameters as filters
+      parameters:
+        - $ref: "#/components/parameters/limit"
+        - $ref: "#/components/parameters/order-by"
+        - $ref: "#/components/parameters/order-dir"
+        - $ref: "#/components/parameters/property-filter-active"
+        - $ref: "#/components/parameters/property-furnished"
+        - $ref: "#/components/parameters/property-filter-gender"
+        - $ref: "#/components/parameters/property-filter-cost-min"
+        - $ref: "#/components/parameters/property-filter-cost-max"
+
+      responses:
+        '200':
+          description: "Succesfully got properties"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/City/properties/properties"
+            text/csv:
+              schema:
+                type: string
+        '204':
+          $ref: "#/components/responses/NoResults"
+
+        '400':
+          $ref: '#/components/responses/BadRequest'
+
+        '500':
+          $ref: '#/components/responses/ServerError'
+
+
+  /city/{id}/statistics:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        description: The ID of the city
+        schema:
+          type: string
+    
+    get:
+      tags:
+        - Cities
+      description: Retrieves statistics (mean, median, std) of rental costs and deposit |
+                across all properties in a chosen city.
+      summary: Retrieve a statistics of properties in the city
+
+      responses:
+        '200':
+          description: "Succesfully got cities"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Statistics"
+            text/csv:
+              schema:
+                type: string
+        '204':
+          $ref: "#/components/responses/NoResults"
+
+        '400':
+          $ref: '#/components/responses/BadRequest'
+
+        '500':
+          $ref: '#/components/responses/ServerError'
+
+
+  /properties/{propertyID}/coverImageUrl:
+    parameters:
+      - name: propertyID
+        in: path
+        required: true
+        description: The cover image url of the property with a given ID
+        schema:
+          type: string
+    get:
+      tags:
+        - Properties
+      summary: Retrieve the cover image url of a selected property
+      description: Retrieve the cover image url of a selected property
+        
+      responses:
+        '200':
+          description: "Succesfully got cover image"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Property/properties/coverImageUrl"
+            text/csv:
+              schema:
+                type: string
+                
+        '204':
+          $ref: "#/components/responses/NoResults"
+          
+        '400':
+          $ref: '#/components/responses/BadRequest'
+
+        '500':
+          $ref: '#/components/responses/ServerError'
+
+    delete:
+      tags:
+        - Properties
+      summary: Delete a cover image
+      description: Deletes the cover image of a property with a given id
+      responses:
+        '204':
+          description: Image deleted successfully
+
+        '400':
+          $ref: '#/components/responses/BadRequest'
+
+        '404':
+          $ref: "#/components/responses/NotFound"
+
+        '500':
+          $ref: '#/components/responses/ServerError'
